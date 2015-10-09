@@ -17,7 +17,16 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+		$name = "Oscar Vazquez";
+		return View::make('hello')->with('name', $name);
+	}
+
+	public function showNew()
+	{
+		$gents = [
+			'oscar vazquez', 'gustavo vazquez', 'marcos vazquez'
+		];
+		return View::make('new', compact('gents'));
 	}
 
 }
